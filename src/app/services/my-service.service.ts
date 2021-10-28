@@ -22,7 +22,7 @@ export class MyServiceService {
     ).then((result) => {
       const user = getAuth().currentUser;
       const userId = user.uid;
-      this.afrdb.list('User/').push(data);
+      this.afrdb.object('User/'+userId).set(data.value);
     });
   }
 }
