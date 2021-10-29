@@ -8,38 +8,38 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card color="primary">
     <ion-card-content>
       <form #data="ngForm" (ngSubmit)="submitForm(data)" novalidate>
 
-        <ion-item lines="full">
+        <ion-item color="primary" lines="full">
           <ion-label position="floating">First name</ion-label>
           <ion-input name="firstName" ngModel type="text" required></ion-input>
         </ion-item>
 
-        <ion-item lines="full">
+        <ion-item color="primary" lines="full">
           <ion-label position="floating">Last name</ion-label>
           <ion-input name="lastName" ngModel type="text" required></ion-input>
         </ion-item>
 
-        <ion-item lines="full">
+        <ion-item color="primary" lines="full">
           <ion-label position="floating">Email</ion-label>
           <ion-input name="email" ngModel type="email" required></ion-input>
         </ion-item>
 
-        <ion-item lines="full">
+        <ion-item color="primary" lines="full">
           <ion-label position="floating">Password</ion-label>
           <ion-input name="password" ngModel type="password" required></ion-input>
         </ion-item>
 
-        <ion-item lines="full">
+        <ion-item color="primary" lines="full">
           <ion-label position="floating">Confirm password</ion-label>
           <ion-input name="c_password" ngModel type="password" required></ion-input>
         </ion-item>
 
         <ion-row>
           <ion-col>
-            <ion-button type="submit" color="primary" expand="block">Sign up</ion-button>
+            <ion-button type="submit" color="light" expand="block">Sign up</ion-button>
           </ion-col>
         </ion-row>
       </form>

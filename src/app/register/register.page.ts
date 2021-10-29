@@ -1,6 +1,6 @@
 import { MyServiceService } from './../services/my-service.service';
 import { Component, OnInit } from '@angular/core';
-
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -9,15 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterPage implements OnInit {
 
   constructor(
-    private mService: MyServiceService
+    private mService: MyServiceService,
+    public toastController: ToastController
   ) { }
 
   ngOnInit() {
   }
 
-  public submitForm(data: any){
+  public async submitForm(data: any){
     if (data.value.password !== data.value.c_password){
-      console.log('The two password are not equal...');
+      const toast = await this.toastController.create({
+        message: 'Your passwords are not the same',
+        duration: 2000
+      });
+      toast.present();
     }else{
       this.mService.signUpUser(data);
     }
