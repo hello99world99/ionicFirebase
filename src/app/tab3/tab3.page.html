@@ -15,4 +15,12 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-item>
+    <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="value">
+  </ion-item>
+  <ion-item *ngFor="let user of userList | filter:value">
+    <ion-list>
+      <ion-label>{{ user.firstName +' '+ user.lastName +' '+ user.email }}</ion-label>
+    </ion-list>
+  </ion-item>
 </ion-content>

@@ -8,6 +8,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { firebaseConfig } from 'src/environments/environment';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { initializeApp } from 'firebase/app';
 
 
@@ -24,7 +25,8 @@ import { AppComponent } from './app.component';
   AngularFireAuthModule,
   AngularFirestoreModule,
   AngularFireDatabaseModule,
-  AngularFireStorageModule
+  AngularFireStorageModule,
+  Ng2SearchPipeModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
