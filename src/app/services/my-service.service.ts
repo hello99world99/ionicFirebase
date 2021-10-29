@@ -18,7 +18,6 @@ export class MyServiceService {
   ) { }
 
   signUpUser(data: any){
-    console.log(data.value);
     this.auth.createUserWithEmailAndPassword(
       data.value.email, data.value.password
     ).then((result) => {

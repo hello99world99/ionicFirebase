@@ -7,7 +7,11 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
 export class Tab1Page {
+
+  public firstName: any;
+  public lastName: any;
 
   constructor(
     private afrdb: AngularFireDatabase,
@@ -16,7 +20,8 @@ export class Tab1Page {
     const userId = user.uid;
     this.afrdb.list('User/'+userId).valueChanges().subscribe(
       (result) => {
-        console.log(result);
+        this.firstName = result[2];
+        this.lastName = result[3];
       }
     );
   }
