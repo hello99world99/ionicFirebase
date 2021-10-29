@@ -9,6 +9,8 @@ import { getAuth } from '@firebase/auth';
 })
 export class MyServiceService {
 
+  private userList: any;
+
   constructor(
     private fireStore: AngularFireStorage,
     private auth: AngularFireAuth,

@@ -1,4 +1,6 @@
+import { MyServiceService } from './../services/my-service.service';
 import { Component } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  public userList: any;
+
+  constructor(private afrdb: AngularFireDatabase) {
+    this.afrdb.list('User/').valueChanges().subscribe(
+      (result) => {
+        this.userList = result;
+      }
+    );
+  }
 
 }
