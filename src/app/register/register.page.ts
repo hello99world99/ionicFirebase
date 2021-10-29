@@ -16,7 +16,11 @@ export class RegisterPage implements OnInit {
   }
 
   public submitForm(data: any){
-    this.mService.signUpUser(data);
+    if (data.value.password !== data.value.c_password){
+      console.log('The two password are not equal...');
+    }else{
+      this.mService.signUpUser(data);
+    }
   }
 
 }

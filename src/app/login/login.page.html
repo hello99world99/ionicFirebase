@@ -5,30 +5,30 @@
 </ion-header>
 
 <ion-content>
-  <ion-card color="light">
+  <ion-card color="primary">
 
     <ion-card-content>
       <form #data="ngForm" (ngSubmit)="submitForm(data)">
 
-        <ion-item lines="full">
+        <ion-item color="primary" lines="full">
           <ion-label position="floating">Email</ion-label>
           <ion-input name="email" ngModel type="email" required></ion-input>
         </ion-item>
 
-        <ion-item lines="full">
+        <ion-item color="primary" lines="full">
           <ion-label position="floating">Password</ion-label>
           <ion-input name="password" ngModel type="password" required></ion-input>
         </ion-item>
 
         <ion-row>
           <ion-col>
-            <ion-button type="submit" color="primary" expand="block">Sign in</ion-button>
+            <ion-button type="submit" color="secondary" expand="block">Sign in</ion-button>
           </ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col>
-            <ion-button routerLink="/register" color="secondary" expand="block">Sign up</ion-button>
+            <ion-button routerLink="/register" color="light" expand="block">Sign up</ion-button>
           </ion-col>
         </ion-row>
       </form>
