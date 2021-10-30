@@ -14,12 +14,9 @@
     <ion-label position="floating">Search</ion-label>
     <ion-input type="text" class="form-control" placeholder="Search..." [(ngModel)]="value"></ion-input>
   </ion-item>
-  <ion-item *ngFor="let user of userList | filter:value; let index = index">
-    <ion-list *ngIf="index % 2 === 0" color="primary">
-      <ion-label>{{ user.firstName +' '+ user.lastName }}</ion-label>
-    </ion-list>
-    <ion-list *ngIf="index % 2 === 1" color="secondary">
-      <ion-label>{{ user.firstName +' '+ user.lastName }}</ion-label>
+  <ion-item *ngFor="let user of userList | filter:value">
+    <ion-list>
+      <h3 style="color: #0275d8;">{{ user.firstName +' '+ user.lastName | titlecase }}</h3>
     </ion-list>
   </ion-item>
 </ion-content>

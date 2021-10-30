@@ -3,16 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      User list
+    <ion-title color="primary">
+      Users list
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item *ngFor="let user of userList">
-    <ion-list>
-      <ion-label>{{ user.firstName + ' ' + user.lastName }}</ion-label>
-    </ion-list>
+      <ion-avatar slot="start">
+        <ion-img src="assets/Images/vector users icon_4144740.png"></ion-img>
+      </ion-avatar>
+      <ion-label>
+      <h1 style="color: #0275d8;">{{ user.firstName + ' ' + user.lastName | titlecase}}</h1>
+      <span>{{ user.email }}</span>
+      </ion-label>
   </ion-item>
 </ion-content>
